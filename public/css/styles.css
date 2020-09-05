@@ -90,6 +90,7 @@ input[type="text"]:focus {
 }
 
 footer {
+  margin-top: 35%;
   color: white;
   color: rgba(0, 0, 0, 0.5);
   text-align: center;
