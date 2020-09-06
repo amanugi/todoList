@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const _ = require('lodash');
+require('dotenv').config();
 
 const app = express();
 
@@ -11,8 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 // Creating the database
-mongoose.connect("mongodb+srv://AmanSingh:aman%23123@freecluster.kgdjd.mongodb.net/todolistDB", {useNewUrlParser: true, useUnifiedTopology: true});
-// use %23 in place of # in your password
+mongoose.connect(process.env.URL, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
 
 // Creating the schema for items
 const itemsSchema = {
